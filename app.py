@@ -116,7 +116,7 @@ def createCustomer():
     customerData = request.get_json()
     serializer = CustomerSchema()
 
-    # Error Handling: Returns status 400 if input data not in corect format
+    # Error Handling: Returns status 400 if input data not in correct format
     try:
         check = serializer.load(customerData)
     except ValidationError:
@@ -143,6 +143,20 @@ def createCustomer():
 
         data = serializer.dump(cust) 
         return jsonify(code=201, message="Data added successfully.", customer=data), 201
+
+@app.route('/customer/<id>', methods=['DELETE'])
+def customerDelete(id):
+    try:
+        cust = CustomerModel.query.get(id)
+        db.session.delete(cust)
+        db.session.commit()
+
+        return jsonify(code=200, message=f"Customer id {id} has been successfully deleted."), 200
+
+    except Exception:
+        jsonMessage = jsonify(error=400, message=f"Invalid Customer ID")
+        response = make_response(jsonMessage, 400)
+        abort(response)
 
 @app.errorhandler(500)
 def internal_server(error):
