@@ -10,14 +10,14 @@ Flask, Marshmallow, SQLAlchemy, POSTGRESQL
 
 Returns json data about all the customers.
 
-- **URL**
+- **URL**</br>
   /customer
-- **Method:**
+- **Method:**</br>
   `GET`
 - **URL Parameters:**
   None
 - **Success Response:**
-  - **Code:** 200
+  - **Code:** 200 </br>
     **Content:** `{{"id": 1, name: "John Tan", "dob": "1999-03-29"}, {"id": 2, "name": "Jane Doe", "dob": "1987-11-05"}, ...}`
 - **Error Response:**
   None
