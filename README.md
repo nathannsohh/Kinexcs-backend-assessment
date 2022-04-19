@@ -83,9 +83,9 @@ Returns json data about all orders made by a single customer.
 
     OR
 
-    - **Code:** 400 </br>
-      **Content:** </br>
-      `{"error": 400, "message": "Bad Request: URL Parameter customer_id = a is not valid. URL parameter must be an integer."}`
+  - **Code:** 400 </br>
+    **Content:** </br>
+    `{"error": 400, "message": "Bad Request: URL Parameter customer_id = a is not valid. URL parameter must be an integer."}`
 
 - **Sample Call:**
 
@@ -128,7 +128,7 @@ print(response)
 
 ### **Create Customer**
 
-Returns json data about youngest customers in the database.
+Creates a customer in the database.
 
 - **URL**</br>
   /customer/create
@@ -189,7 +189,7 @@ print(response)
 
 ### **Delete Customer**
 
-Returns json data about youngest customers in the database.
+Deletes customer from database.
 
 - **URL**</br>
   /customer/:id
